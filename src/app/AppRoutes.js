@@ -1,6 +1,6 @@
 import React, { Component, Suspense, lazy } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
-
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import ProtectedRoute from './ProtectedRoute';
 const Dashboard = lazy(() => import('./dashboard/Dashboard'))
 
 const Signin = lazy(() => import('./general-pages/Signin'))
@@ -24,22 +24,22 @@ export class AppRoutes extends Component {
       <Suspense fallback=''>
         <Switch>
           <Route exact path="/">
-            <Redirect to="/dashboard"></Redirect>
+            <Redirect to="/general-pages/signin"></Redirect>
           </Route>
-          <Route exact path="/dashboard" component={ Dashboard } />
+          <ProtectedRoute exact path="/dashboard" component={ Dashboard } />
 
           <Route exact path="/general-pages/signin" component={ Signin } />
           <Route exact path="/general-pages/signup" component={ Signup } />
 
-          <Route exact path="/ui-elements/buttons" component={ Buttons } />
-          <Route exact path="/ui-elements/dropdowns" component={ Dropdowns } />
-          <Route exact path="/ui-elements/icons" component={ Icons } />
+          <ProtectedRoute exact path="/ui-elements/buttons" component={ Buttons } />
+          <ProtectedRoute exact path="/ui-elements/dropdowns" component={ Dropdowns } />
+          <ProtectedRoute exact path="/ui-elements/icons" component={ Icons } />
 
-          <Route exact path="/form/form-elements" component={ FormElements } />
+          <ProtectedRoute exact path="/form/form-elements" component={ FormElements } />
 
-          <Route exact path="/charts/chartjs" component={ ChartJs } />
+          <ProtectedRoute exact path="/charts/chartjs" component={ ChartJs } />
 
-          <Route exact path="/tables/basic-table" component={ BasicTable } />
+          <ProtectedRoute exact path="/tables/basic-table" component={ BasicTable } />
 
         </Switch>
       </Suspense>
