@@ -1,6 +1,10 @@
+// src/components/Header.jsx
+
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
+import { auth } from "../../firebaseConfig"; // Import the auth object from updated firebaseConfig
+import { signOut } from 'firebase/auth'; // Import signOut from firebase/auth
 
 export class Header extends Component {
   closeMenu(e) {
@@ -18,6 +22,15 @@ export class Header extends Component {
       document.querySelector("body").classList.remove("az-header-menu-show");
     }
   }
+
+  handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      this.props.history.push('/general-pages/signin'); // Redirect to sign-in page
+    } catch (error) {
+      console.error("Sign Out Error", error);
+    }
+  };
 
   render() {
     return (
@@ -71,28 +84,28 @@ export class Header extends Component {
                     }
                   >
                     <Dropdown.Toggle as={"a"} className="nav-link with-sub">
-                      <i className="typcn typcn-document"></i> Pages
+                      <i className="typcn typcn-document"></i> Surface
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="az-menu-sub">
                       <Link
-                        to="/general-pages/signin"
+                        to="#"
                         className={
                           this.isPathActive("/general-pages/signin")
                             ? "nav-link active"
                             : "nav-link"
                         }
                       >
-                        Sign In
+                        Scans
                       </Link>
                       <Link
-                        to="/general-pages/signup"
+                        to="#"
                         className={
                           this.isPathActive("/general-pages/signup")
                             ? "nav-link active"
                             : "nav-link"
                         }
                       >
-                        Sign Up
+                        Download reports
                       </Link>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -109,13 +122,13 @@ export class Header extends Component {
                     }
                   >
                     <Dropdown.Toggle as={"a"} className="nav-link with-sub">
-                      <i className="typcn typcn-book"></i> Components
+                      <i className="typcn typcn-book"></i> Features
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="az-menu-sub az-menu-sub-mega">
                       <div className="container">
                         <div>
                           <nav className="nav">
-                            <span>UI Elements</span>
+                            <span>Scan</span>
                             <Link
                               to="/ui-elements/buttons"
                               className={
@@ -124,7 +137,7 @@ export class Header extends Component {
                                   : "nav-link"
                               }
                             >
-                              Buttons
+                              On Demand
                             </Link>
                             <Link
                               to="/ui-elements/dropdowns"
@@ -134,23 +147,13 @@ export class Header extends Component {
                                   : "nav-link"
                               }
                             >
-                              Dropdown
-                            </Link>
-                            <Link
-                              to="/ui-elements/icons"
-                              className={
-                                this.isPathActive("/ui-elements/icons")
-                                  ? "nav-link active"
-                                  : "nav-link"
-                              }
-                            >
-                              Icons
+                              Schedule
                             </Link>
                           </nav>
                         </div>
                         <div>
                           <nav className="nav">
-                            <span>Forms</span>
+                            <span>Vulnerabilities</span>
                             <Link
                               to="/form/form-elements"
                               className={
@@ -159,13 +162,23 @@ export class Header extends Component {
                                   : "nav-link"
                               }
                             >
-                              Form Elements
+                              Map
+                            </Link>
+                            <Link
+                              to="/form/form-elements"
+                              className={
+                                this.isPathActive("/form/form-elements")
+                                  ? "nav-link active"
+                                  : "nav-link"
+                              }
+                            >
+                              All
                             </Link>
                           </nav>
                         </div>
                         <div>
                           <nav className="nav">
-                            <span>Charts</span>
+                            <span>Report</span>
                             <Link
                               to="/charts/chartjs"
                               className={
@@ -174,13 +187,23 @@ export class Header extends Component {
                                   : "nav-link"
                               }
                             >
-                              ChartJS
+                              On Demand
+                            </Link>
+                            <Link
+                              to="/charts/chartjs"
+                              className={
+                                this.isPathActive("/charts/chartjs")
+                                  ? "nav-link active"
+                                  : "nav-link"
+                              }
+                            >
+                              Schedule
                             </Link>
                           </nav>
                         </div>
                         <div>
                           <nav className="nav">
-                            <span>Tables</span>
+                            <span>Settings</span>
                             <Link
                               to="/tables/basic-table"
                               className={
@@ -189,13 +212,55 @@ export class Header extends Component {
                                   : "nav-link"
                               }
                             >
-                              Basic Tables
+                              Users
+                            </Link>
+                            <Link
+                              to="/tables/basic-table"
+                              className={
+                                this.isPathActive("/tables/basic-table")
+                                  ? "nav-link active"
+                                  : "nav-link"
+                              }
+                            >
+                              Organization
+                            </Link>
+                            <Link
+                              to="/tables/basic-table"
+                              className={
+                                this.isPathActive("/tables/basic-table")
+                                  ? "nav-link active"
+                                  : "nav-link"
+                              }
+                            >
+                              Tags
                             </Link>
                           </nav>
                         </div>
                       </div>
                     </Dropdown.Menu>
                   </Dropdown>
+                </li>
+                <li
+                  className={
+                    this.isPathActive("/tables/basic-table")
+                      ? "nav-item active"
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/tables/basic-table" className="nav-link">
+                    <i className="typcn typcn-flash-outline"></i> Alerts
+                  </Link>
+                </li>
+                <li
+                  className={
+                    this.isPathActive("/tables/basic-table")
+                      ? "nav-item active"
+                      : "nav-item"
+                  }
+                >
+                  <Link to="/tables/basic-table" className="nav-link">
+                    <i className="typcn typcn-document-text"></i> Rules
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -336,9 +401,9 @@ export class Header extends Component {
                   <a href="#/" className="dropdown-item">
                     <i className="typcn typcn-cog-outline"></i> Account Settings
                   </a>
-                  <Link to="/general-pages/signin" className="dropdown-item">
+                  <a href="#/" onClick={this.handleSignOut} className="dropdown-item">
                     <i className="typcn typcn-power-outline"></i> Sign Out
-                  </Link>
+                  </a>
                 </Dropdown.Menu>
               </Dropdown>
             </div>

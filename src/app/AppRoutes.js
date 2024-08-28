@@ -1,5 +1,5 @@
 import React, { Component, Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import ProtectedRoute from './ProtectedRoute';
 const Dashboard = lazy(() => import('./dashboard/Dashboard'))
 
