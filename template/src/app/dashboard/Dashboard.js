@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {Line, Bar, Pie } from 'react-chartjs-2';
 
-export class Dashboard extends Component { 
+export class Dashboard extends Component {
   websiteAudienceChartData = {
     labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49',
-    '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', 
+    '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99',
     '100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '129', '130', '131', '132', '133', '134', '135', '136', '137', '138', '139', '140', '141', '142', '143', '144', '145', '146', '147', '148', '149'],
     datasets: [{
       label: 'This week',
@@ -404,50 +404,83 @@ export class Dashboard extends Component {
   render() {
     return (
       <div>
-        <div className="proBanner">
-          <div>
-            <span className="d-flex align-items-center purchase-popup">
-              <p className="m-0">Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>
-              <a href="https://www.bootstrapdash.com/product/azia-react/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" rel="noopener noreferrer" target="_blank" className="btn btn-sm btn-primary ml-auto">Check Pro Version</a>
-              <i className="typcn typcn-delete-outline bannerClose" onClick={this.toggleProBanner}></i>
-            </span>
-          </div>
-        </div>
         <div className="container p-md-0">
           <div className="az-content-body">
-            <div className="az-dashboard-one-title">
-              <div>
+          <div>
                 <h2 className="az-dashboard-title">Hi, welcome back!</h2>
-                <p className="az-dashboard-text">Your web analytics dashboard template.</p>
+                <p className="az-dashboard-text">Inventory Overview</p>
               </div>
+            <div className="az-dashboard-one-title">
               <div className="az-content-header-right">
                 <div className="media">
                   <div className="media-body">
-                    <label>Start Date</label>
-                    <h6>Oct 10, 2018</h6>
+                    <label>Domains</label>
+                    <h4>25</h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>End Date</label>
-                    <h6>Oct 23, 2018</h6>
+                    <label>Sub-Domains</label>
+                    <h4>30</h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Event Category</label>
-                    <h6>All Categories</h6>
+                    <label>Services</label>
+                    <h4>15</h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
-                <a href="#/" className="btn btn-purple">Export</a>
+                <div className="media">
+                  <div className="media-body">
+                    <label>Applications</label>
+                    <h4>15</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Certificates</label>
+                    <h4>25</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>API</label>
+                    <h4>9</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Warnings</label>
+                    <h4>68</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>IP Addresses</label>
+                    <h4>30</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+              <div className="media">
+                  <div className="media-body">
+                    <label>Errors</label>
+                    <h4>58</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+              <div className="media">
+                  <div className="media-body">
+                    <label>Plugins</label>
+                    <h4>12</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <a href="#/" className="btn btn-outline-indigo">Details</a>
               </div>
             </div>{/* az-dashboard-one-title */}
 
             <div className="az-dashboard-nav">
               <nav className="nav">
                 <a className="nav-link active" data-toggle="tab" href="#/">Overview</a>
-                <a className="nav-link" data-toggle="tab" href="#/">Audiences</a>
-                <a className="nav-link" data-toggle="tab" href="#/">Demographics</a>
+                <a className="nav-link" data-toggle="tab" href="#/">Vulnerabilities</a>
+                <a className="nav-link" data-toggle="tab" href="#/">Critical Attacks</a>
                 <a className="nav-link" data-toggle="tab" href="#/">More</a>
               </nav>
 
@@ -460,45 +493,63 @@ export class Dashboard extends Component {
             </div>
 
             <div className="row row-sm mg-b-20">
-              <div className="col-lg-7 ht-lg-100p">
-                <div className="card card-dashboard-one">
-                  <div className="card-header">
-                    <div>
-                      <h6 className="card-title">Website Audience Metrics</h6>
-                      <p className="card-text">Audience to which the users belonged while on the current date range.</p>
-                    </div>
-                    <div className="btn-group">
-                      <button className="btn active">Day</button>
-                      <button className="btn">Week</button>
-                      <button className="btn">Month</button>
-                    </div>
-                  </div>{/* card-header */}
-                  <div className="card-body">
-                    <div className="card-body-top">
-                      <div>
-                        <label className="mg-b-0">Users</label>
-                        <h2>13,956</h2>
-                      </div>
-                      <div>
-                        <label className="mg-b-0">Bounce Rate</label>
-                        <h2>33.50%</h2>
-                      </div>
-                      <div>
-                        <label className="mg-b-0">Page Views</label>
-                        <h2>83,123</h2>
-                      </div>
-                      <div>
-                        <label className="mg-b-0">Sessions</label>
-                        <h2>16,869</h2>
-                      </div>
-                    </div>{/* card-body-top */}
-                    <div className="page-view-chart-wrapper">
-                      <Line data={this.websiteAudienceChartData} options={this.websiteAudienceChartOptions} />
-                    </div>{/* flot-chart-wrapper */}
-                  </div>{/* card-body */}
-                </div>{/* card */}
-              </div>{/* col */}
-              <div className="col-lg-5 mg-t-20 mg-lg-t-0">
+            <div className="col-lg-5 mg-t-20 mg-lg-t-0">
+                <div className="row row-sm">
+                  <div className="col-sm-6">
+                    <div className="card card-dashboard-two">
+                      <div className="card-header">
+                        <h6>33.50% <i className="icon ion-md-trending-up tx-success"></i> <small>18.02%</small></h6>
+                        <p>Bounce Rate</p>
+                      </div>{/* card-header */}
+                      <div className="card-body">
+                        <div className="chart-wrapper">
+                          <Line data={this.bounceRateChartData} options={this.bounceRateChartOptions} />
+                        </div>{/* chart-wrapper */}
+                      </div>{/* card-body */}
+                    </div>{/* card */}
+                  </div>{/* col */}
+                  <div className="col-sm-6 mg-t-20 mg-sm-t-0">
+                    <div className="card card-dashboard-two">
+                      <div className="card-header">
+                        <h6>86k <i className="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
+                        <p>Total Users</p>
+                      </div>{/* card-header */}
+                      <div className="card-body">
+                        <div className="chart-wrapper">
+                          <Bar data={this.totalUsersChartData} options={this.totalUsersChartOptions} />
+                        </div>{/* chart-wrapper */}
+                      </div>{/* card-body */}
+                    </div>{/* card */}
+                  </div>{/* col */}
+                  <div className="col-sm-6 mg-t-20 mg-sm-t-20">
+                    <div className="card card-dashboard-two">
+                      <div className="card-header">
+                        <h6>86k <i className="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
+                        <p>Total Users</p>
+                      </div>{/* card-header */}
+                      <div className="card-body">
+                        <div className="chart-wrapper">
+                          <Bar data={this.totalUsersChartData} options={this.totalUsersChartOptions} />
+                        </div>{/* chart-wrapper */}
+                      </div>{/* card-body */}
+                    </div>{/* card */}
+                  </div>{/* col */}
+ <div className="col-sm-6 mg-t-20 mg-sm-t-20">
+                    <div className="card card-dashboard-two">
+                      <div className="card-header">
+                        <h6>86k <i className="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
+                        <p>Total Users</p>
+                      </div>{/* card-header */}
+                      <div className="card-body">
+                        <div className="chart-wrapper">
+                          <Bar data={this.totalUsersChartData} options={this.totalUsersChartOptions} />
+                        </div>{/* chart-wrapper */}
+                      </div>{/* card-body */}
+                    </div>{/* card */}
+                  </div>{/* col */}
+                </div>{/* row */}
+              </div>{/*col */}
+            <div className="col-lg-5 mg-t-20 mg-lg-t-0">
                 <div className="row row-sm">
                   <div className="col-sm-6">
                     <div className="card card-dashboard-two">
@@ -527,6 +578,117 @@ export class Dashboard extends Component {
                     </div>{/* card */}
                   </div>{/* col */}
                   <div className="col-sm-12 mg-t-20">
+                    <div className="card card-dashboard-three">
+                      <div className="card-header">
+                        <p>All Sessions</p>
+                        <h6>16,869 <small className="tx-success"><i className="icon ion-md-arrow-up"></i> 2.87%</small></h6>
+                        <small>The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc.</small>
+                      </div>{/* card-header */}
+                      <div className="card-body">
+                        <div className="chart d-flex align-items-end">
+                          <Bar data={this.allSessionsChartData} options={this.allSessionsChartOptions} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>{/* row */}
+              </div>{/*col */}
+            <div className="col-lg-2 mg-t-20 mg-lg-t-0">
+
+                    <div className="card card-dashboard-two">
+                      <div className="card-header">
+                        <h6>Activities</h6>
+                        <div className="az-list-item">
+                        <div>
+                        <p>Admin Home</p>
+                        <span>/demo/admin/index.html</span>
+                        <p className="tx-primary">7,755</p>
+                        <span>31.74% (-100.00%)</span>
+                        </div>
+                        </div>{/* list-group-item */}
+                    <div className="az-list-item">
+                      <div>
+                        <p>Form Elements</p>
+                        <span>/demo/admin/forms.html</span>
+                        <p className="tx-primary">5,215</p>
+                        <span>28.53% (-100.00%)</span>
+                      </div>
+                    </div>{/* list-group-item */}
+                  <div className="az-list-item">
+                      <div>
+                        <p>Form Elements</p>
+                        <span>/demo/admin/forms.html</span>
+                        <p className="tx-primary">5,215</p>
+                        <span>28.53% (-100.00%)</span>
+                      </div>
+                    </div>{/* list-group-item */}
+
+
+                  </div>{/* card-body */}
+                </div>{/* card */}
+
+              </div>{/*col */}
+              <div className="col-lg-7 ht-lg-100p mg-t-20">
+
+                <div className="card card-dashboard-one">
+                  <div className="card-header">
+                    <div>
+                      <h6 className="card-title">Assets Vulnerability Metrics</h6>
+                      <p className="card-text">Audience to which the users belonged while on the current date range.</p>
+                    </div>
+                    <div className="btn-group">
+                      <button className="btn active">Day</button>
+                      <button className="btn">Week</button>
+                      <button className="btn">Month</button>
+                    </div>
+                  </div>{/* card-header */}
+                  <div className="card-body">
+                    <div className="card-body-top">
+                      <div>
+                        <label className="mg-b-0">Vulnerabilities</label>
+                        <h2>550</h2>
+                      </div>
+                      <div>
+                        <label className="mg-b-0">Rate</label>
+                        <h2>33.50%</h2>
+                      </div>
+                    </div>{/* card-body-top */}
+                    <div className="page-view-chart-wrapper">
+                      <Line data={this.websiteAudienceChartData} options={this.websiteAudienceChartOptions} />
+                    </div>{/* flot-chart-wrapper */}
+                  </div>{/* card-body */}
+                </div>{/* card */}
+              </div>{/* col */}
+
+              <div className="col-lg-5 mg-t-20 mg-lg-t-20">
+                <div className="row row-sm">
+                  <div className="col-sm-6">
+                    <div className="card card-dashboard-two">
+                      <div className="card-header">
+                        <h6>33.50% <i className="icon ion-md-trending-up tx-success"></i> <small>18.02%</small></h6>
+                        <p>Applications </p>
+                      </div>{/* card-header */}
+                      <div className="card-body">
+                        <div className="chart-wrapper">
+                          <Line data={this.bounceRateChartData} options={this.bounceRateChartOptions} />
+                        </div>{/* chart-wrapper */}
+                      </div>{/* card-body */}
+                    </div>{/* card */}
+                  </div>{/* col */}
+                  <div className="col-sm-6 mg-t-20 mg-sm-t-0">
+                    <div className="card card-dashboard-two">
+                      <div className="card-header">
+                        <h6>86k <i className="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
+                        <p>Total Users</p>
+                      </div>{/* card-header */}
+                      <div className="card-body">
+                        <div className="chart-wrapper">
+                          <Bar data={this.totalUsersChartData} options={this.totalUsersChartOptions} />
+                        </div>{/* chart-wrapper */}
+                      </div>{/* card-body */}
+                    </div>{/* card */}
+                  </div>{/* col */}
+                  <div className="col-sm-12 mg-lg-t-20">
                     <div className="card card-dashboard-three">
                       <div className="card-header">
                         <p>All Sessions</p>
@@ -609,7 +771,7 @@ export class Dashboard extends Component {
               <div className="col-lg-8 mg-t-20 mg-lg-t-0">
                 <div className="card card-dashboard-four">
                   <div className="card-header">
-                    <h6 className="card-title">Sessions by Channel</h6>
+                    <h6 className="card-title">Vulnerabilities by Status</h6>
                   </div>{/* card-header */}
                   <div className="card-body row">
                     <div className="col-md-6 d-flex align-items-center">
@@ -620,7 +782,7 @@ export class Dashboard extends Component {
                     <div className="col-md-6 col-lg-5 mg-lg-l-auto mg-t-20 mg-md-t-0">
                       <div className="az-traffic-detail-item">
                         <div>
-                          <span>Organic Search</span>
+                          <span>Critical</span>
                           <span>1,320 <span>(25%)</span></span>
                         </div>
                         <div className="progress">
@@ -629,7 +791,7 @@ export class Dashboard extends Component {
                       </div>
                       <div className="az-traffic-detail-item">
                         <div>
-                          <span>Email</span>
+                          <span>High</span>
                           <span>987 <span>(20%)</span></span>
                         </div>
                         <div className="progress">
@@ -638,7 +800,7 @@ export class Dashboard extends Component {
                       </div>
                       <div className="az-traffic-detail-item">
                         <div>
-                          <span>Referral</span>
+                          <span>Medium</span>
                           <span>2,010 <span>(30%)</span></span>
                         </div>
                         <div className="progress">
@@ -647,7 +809,7 @@ export class Dashboard extends Component {
                       </div>
                       <div className="az-traffic-detail-item">
                         <div>
-                          <span>Social</span>
+                          <span>Low</span>
                           <span>654 <span>(15%)</span></span>
                         </div>
                         <div className="progress">

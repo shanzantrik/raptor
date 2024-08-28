@@ -1,7 +1,7 @@
 {
-  "name": "demo",
+  "name": "raptor",
   "version": "0.1.0",
-  "homepage": "https://bootstrapdash.com/demo/azia-react-free/template/preview",
+  "homepage": "http://localhost:3000/dashboard",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
@@ -35,6 +35,7 @@
     "react-scripts": "3.3.0",
     "react-select": "^3.0.8",
     "react-simplemde-editor": "^4.1.0",
+    "sass": "^1.77.8",
     "typicons.font": "^2.0.9"
   },
   "scripts": {
@@ -59,7 +60,6 @@
     ]
   },
   "devDependencies": {
-    "compass-mixins": "^0.12.10",
-    "node-sass": "^4.13.0"
+    "compass-mixins": "^0.12.10"
   }
 }

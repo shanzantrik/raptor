@@ -2,7 +2,7 @@
 
 .az-navbar-dashboard-four {
   box-shadow: 0 0 30px rgba($gray-900, .08);
-  
+
   .container-fluid {
     @include media-breakpoint-up(lg) {
       padding-left: 25px;
@@ -72,11 +72,11 @@
   .media {
     label {
       margin-bottom: 2px;
-      font-size: 10px;
-      font-weight: 500;
+      font-size: 12px;
+      font-weight: 600;
       letter-spacing: .5px;
       text-transform: uppercase;
-      color: $gray-500;
+      color: $az-color-primary;
     }
 
     h6 {

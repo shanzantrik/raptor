@@ -26,7 +26,7 @@ export class Header extends Component {
           <div className="container">
             <div className="az-header-left">
               <a href="#/" className="az-logo">
-                <span></span> azia
+                <span></span> Raptor
               </a>
               <a
                 id="azMenuShow"
@@ -40,7 +40,7 @@ export class Header extends Component {
             <div className="az-header-menu">
               <div className="az-header-menu-header">
                 <Link to="/" className="az-logo">
-                  <span></span> azia
+                  <span></span> Raptor
                 </Link>
                 <a
                   href="#/"
@@ -200,7 +200,7 @@ export class Header extends Component {
               </ul>
             </div>
             <div className="az-header-right">
-            <a href="https://www.bootstrapdash.com/demo/azia-react-free/documentation/documentation.html" className="az-header-search-link">
+            <a href="#/" className="az-header-search-link">
                 <i className="fas fa-file-alt"></i>
               </a>
               <a href="#/" className="az-header-search-link">
@@ -299,7 +299,7 @@ export class Header extends Component {
               <Dropdown className="az-profile-menu">
                 <Dropdown.Toggle as={"a"} className="az-img-user">
                   <img
-                    src={require("../../assets/images/img1.jpg")}
+                    src={require("../../assets/images/photome.jpg")}
                     alt=""
                   ></img>
                 </Dropdown.Toggle>
@@ -316,11 +316,11 @@ export class Header extends Component {
                   <div className="az-header-profile">
                     <div className="az-img-user">
                       <img
-                        src={require("../../assets/images/img1.jpg")}
+                        src={require("../../assets/images/photome.jpg")}
                         alt=""
                       ></img>
                     </div>
-                    <h6>Aziana Pechon</h6>
+                    <h6>Shantanu G</h6>
                     <span>Premium Member</span>
                   </div>
 
