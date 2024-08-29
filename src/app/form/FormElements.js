@@ -7,7 +7,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select';
 import Nouislider from "nouislider-react";
-import "nouislider/distribute/nouislider.css";
+import "../../../node_modules/nouislider/dist/nouislider.css";
 import bsCustomFileInput from 'bs-custom-file-input';
 
 export class FormElements extends Component {
