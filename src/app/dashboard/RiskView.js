@@ -1,6 +1,24 @@
-// RiskView.js
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+
+// Register components with ChartJS
+ChartJS.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
+);
 
 // Define chart data and options at the top level
 const lineChartData = {
@@ -17,6 +35,15 @@ const lineChartData = {
 };
 
 const lineChartOptions = {
+  plugins: {
+    legend: {
+      display: true,
+    },
+    title: {
+      display: true,
+      text: 'Sales Data',
+    },
+  },
   scales: {
     y: {
       beginAtZero: true,
@@ -39,6 +66,15 @@ const areaChartData = {
 };
 
 const areaChartOptions = {
+  plugins: {
+    legend: {
+      display: true,
+    },
+    title: {
+      display: true,
+      text: 'Revenue Data',
+    },
+  },
   scales: {
     y: {
       beginAtZero: true,
@@ -46,8 +82,7 @@ const areaChartOptions = {
   },
 };
 
-// Other chart data and options can also be defined here
-
+// Define the RiskView component
 const RiskView = () => {
   return (
     <div className="row row-lg mg-b-20">
@@ -67,44 +102,39 @@ const RiskView = () => {
               <Line data={areaChartData} options={areaChartOptions} />
             </div>
           </div>
-          {/* Add the other charts as you did before */}
         </div>
       </div>
       <div className="col-lg-2 mg-t-20 mg-lg-t-0">
-
-                    <div className="card card-dashboard-two">
-                      <div className="card-header">
-                        <h6>Activities</h6>
-                        <div className="az-list-item">
-                        <div>
-                        <p>Admin Home</p>
-                        <span>/demo/admin/index.html</span>
-                        <p className="tx-primary">7,755</p>
-                        <span>31.74% (-100.00%)</span>
-                        </div>
-                        </div>{/* list-group-item */}
-                    <div className="az-list-item">
-                      <div>
-                        <p>Form Elements</p>
-                        <span>/demo/admin/forms.html</span>
-                        <p className="tx-primary">5,215</p>
-                        <span>28.53% (-100.00%)</span>
-                      </div>
-                    </div>{/* list-group-item */}
-                  <div className="az-list-item">
-                      <div>
-                        <p>Form Elements</p>
-                        <span>/demo/admin/forms.html</span>
-                        <p className="tx-primary">5,215</p>
-                        <span>28.53% (-100.00%)</span>
-                      </div>
-                    </div>{/* list-group-item */}
-
-
-                  </div>{/* card-body */}
-                </div>{/* card */}
-
-      </div>{/*col */}
+        <div className="card card-dashboard-two">
+          <div className="card-header">
+            <h6>Activities</h6>
+            <div className="az-list-item">
+              <div>
+                <p>Admin Home</p>
+                <span>/demo/admin/index.html</span>
+                <p className="tx-primary">7,755</p>
+                <span>31.74% (-100.00%)</span>
+              </div>
+            </div>
+            <div className="az-list-item">
+              <div>
+                <p>Form Elements</p>
+                <span>/demo/admin/forms.html</span>
+                <p className="tx-primary">5,215</p>
+                <span>28.53% (-100.00%)</span>
+              </div>
+            </div>
+            <div className="az-list-item">
+              <div>
+                <p>Form Elements</p>
+                <span>/demo/admin/forms.html</span>
+                <p className="tx-primary">5,215</p>
+                <span>28.53% (-100.00%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

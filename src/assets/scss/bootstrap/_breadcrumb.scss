@@ -8,7 +8,7 @@
 .breadcrumb-style2,
 .breadcrumb-style3 {
   .breadcrumb {
-    @include border-radius(0);
+    border-radius: 0;  /* Replacing @include border-radius(0); */
     background-color: transparent;
     padding: 0;
 
@@ -21,7 +21,10 @@
 
       a {
         color: $gray-900;
-        @include hover-focus() { color: $az-color-primary; }
+        &:hover,
+        &:focus {
+          color: $az-color-primary;
+        }
       }
 
       &.active { color: $az-color-primary; }

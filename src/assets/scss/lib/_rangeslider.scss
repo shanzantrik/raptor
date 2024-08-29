@@ -1,14 +1,13 @@
-
 /* ###### 5.9 RangeSlider ###### */
 .irs-min, .irs-max {
   font-family: $font-family-roboto;
-  @include border-radius(0);
+  border-radius: 0; /* Replacing @include border-radius(0) */
 }
 
 .irs-from, .irs-to, .irs-single {
   font-family: $font-family-roboto;
   background-color: $az-color-primary;
-  @include border-radius(0);
+  border-radius: 0; /* Replacing @include border-radius(0) */
 }
 
 .irs-bar {
@@ -19,13 +18,13 @@
 .irs-bar-edge {
   background-image: none;
   background-color: $az-color-primary;
-  @include border-left-radius(0);
+  border-left-radius: 0; /* Replacing @include border-left-radius(0) */
 }
 
 .irs-line-left {
   background-image: none;
   background-color: $gray-300;
-  @include border-left-radius(0);
+  border-left-radius: 0; /* Replacing @include border-left-radius(0) */
 }
 
 .irs-line-mid {
@@ -36,7 +35,7 @@
 .irs-line-right {
   background-image: none;
   background-color: $gray-300;
-  @include border-right-radius(0);
+  border-right-radius: 0; /* Replacing @include border-right-radius(0) */
 }
 
 .irs-from::after, .irs-to::after,
@@ -66,9 +65,9 @@
 
 /* #################### COLOR VARIANT SKINS #################### */
 
-.irs-primary { @include irs-color-variant($blue); }
-.irs-success { @include irs-color-variant($green); }
-.irs-dark    { @include irs-color-variant($gray-800); }
+.irs-primary { background-color: $blue; } /* Simplified variant application */
+.irs-success { background-color: $green; }
+.irs-dark    { background-color: $gray-800; }
 
 
 /* #################### MODERN SKIN #################### */
@@ -91,7 +90,7 @@
     top: 19px;
     background-color: #fff;
     border: 1px solid $az-color-primary;
-    @include border-radius(0);
+    border-radius: 0; /* Replacing @include border-radius(0) */
 
     &::before {
       width: 4px;
@@ -104,10 +103,9 @@
     }
   }
 
-  &.irs-primary { @include irs-modern-slider-variant($blue); }
-  &.irs-success { @include irs-modern-slider-variant($green); }
-  &.irs-dark { @include irs-modern-slider-variant($gray-900); }
-
+  &.irs-primary { background-color: $blue; } /* Simplified variant application */
+  &.irs-success { background-color: $green; }
+  &.irs-dark { background-color: $gray-900; }
 }
 
 
@@ -116,7 +114,7 @@
   .irs-line {
     border: 1px solid $az-color-primary;
     height: 10px;
-    @include border-radius(5px);
+    border-radius: 5px; /* Replacing @include border-radius(5px) */
   }
 
   .irs-line-left,
@@ -129,21 +127,21 @@
   .irs-bar,
   .irs-bar-edge { height: 10px; }
 
-  .irs-bar-edge { @include border-left-radius(5px); }
+  .irs-bar-edge { border-left-radius: 5px; /* Replacing @include border-left-radius(5px) */ }
 
   .irs-slider {
     top: 21px;
     width: 18px;
     background-color: #fff;
     border: 1px solid $az-color-primary;
-    @include border-radius(100%);
+    border-radius: 100%; /* Replacing @include border-radius(100%) */
 
     &::before {
       margin-left: -4px;
       top: 4px;
       width: 8px;
       height: 8px;
-      @include border-radius(100%);
+      border-radius: 100%; /* Replacing @include border-radius(100%) */
     }
 
     &:hover,
@@ -152,7 +150,7 @@
     }
   }
 
-  &.irs-primary { @include irs-outline-variant($blue); }
-  &.irs-success { @include irs-outline-variant($green); }
-  &.irs-dark { @include irs-outline-variant($gray-800); }
+  &.irs-primary { background-color: $blue; } /* Simplified variant application */
+  &.irs-success { background-color: $green; }
+  &.irs-dark { background-color: $gray-800; }
 }

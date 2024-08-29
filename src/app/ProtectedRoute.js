@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase'; // Adjust the path if needed
 
@@ -10,17 +10,10 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
     return <div>Loading...</div>;
   }
 
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        user ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to="/general-pages/signin" />
-        )
-      }
-    />
+  return user ? (
+    <Component {...rest} />
+  ) : (
+    <Navigate to="/general-pages/signin" replace />
   );
 };
 

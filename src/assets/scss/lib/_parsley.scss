@@ -1,16 +1,18 @@
-
 /* ###### 5.7 Parsley ###### */
 
 input.parsley-error,
 textarea.parsley-error {
-  @extend .is-invalid;
+  border-color: $danger;
+  background-color: lighten($danger, 45%); /* Lighten the danger color */
 
   &:focus { box-shadow: none !important; }
 }
 
 input.parsley-success,
 textarea.parsley-success {
-  @extend .is-valid;
+  border-color: $success;
+  background-color: lighten($success, 45%); /* Lighten the success color */
+
   &:focus { box-shadow: none !important; }
 }
 
@@ -18,29 +20,28 @@ textarea.parsley-success {
   &.parsley-error {
     display: inline-block;
     padding: 10px;
-    border: 1px solid theme-color('danger');
+    border: 1px solid $danger;
   }
 
   &.parsley-success {
     display: inline-block;
     padding: 10px;
-    border: 1px solid theme-color('success');
+    border: 1px solid $success;
   }
 }
 
 .parsley-select {
   &.parsley-error {
-    @extend .has-danger;
+    border-color: $danger;
   }
 
   &.parsley-success {
-    @extend .has-success;
+    border-color: $success;
   }
 }
 
-
 .parsley-errors-list {
-  color: theme-color('danger');
+  color: $danger;
   list-style: none;
   font-size: 12px;
   padding: 0;
@@ -54,40 +55,44 @@ textarea.parsley-success {
   .parsley-input {
     &.parsley-error {
       .form-control {
-        background-color: lighten(theme-color('danger'), 45%);
-        border-color: theme-color('danger');
+        background-color: lighten($danger, 45%);
+        border-color: $danger;
         border-bottom-width: 0;
-        @include border-bottom-radius(0);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
 
     &.parsley-success {
-      .form-control { border-color: theme-color('success'); }
+      .form-control { border-color: $success; }
     }
   }
 
   .parsley-checkbox {
     &.parsley-error {
-      border: 1px solid theme-color('danger');
-      background-color: lighten(theme-color('danger'), 45%);
-      @include border-top-radius(2px);
+      border: 1px solid $danger;
+      background-color: lighten($danger, 45%);
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
     }
   }
 
   .parsley-select {
     &.parsley-error {
       .select2-container--default .select2-selection--single {
-        background-color: lighten(theme-color('danger'), 45%);
-        @include border-bottom-radius(0);
+        background-color: lighten($danger, 45%);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
   }
 
   .parsley-errors-list.filled {
-    background-color: theme-color('danger');
+    background-color: $danger;
     color: #fff;
     padding: 7px 10px;
-    @include border-bottom-radius(2px);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 
     li:first-child { margin-top: 0; }
   }

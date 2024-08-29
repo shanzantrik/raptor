@@ -8,10 +8,11 @@
   max-height: 1800px;
   overflow: hidden;
   background-color: darken($indigo, 25%);
-  //@include gradient-x(darken($indigo, 15%), darken($indigo, 25%));
+  /* Replaced deprecated gradient-x mixin */
+  background: linear-gradient(to right, darken($indigo, 15%), darken($indigo, 25%));
 
-  @include media-breakpoint-up(sm) { height: 600px; }
-  @include media-breakpoint-up(xl) {
+  @media (min-width: 576px) { height: 600px; }
+  @media (min-width: 1200px) {
     height: 100vh;
     max-height: 780px;
   }
@@ -33,13 +34,13 @@
     align-items: flex-end;
     opacity: .2;
 
-    @include media-breakpoint-up(md) { opacity: 1; }
+    @media (min-width: 768px) { opacity: 1; }
 
     .flot-chart {
       width: 100%;
       height: 400px;
 
-      @include media-breakpoint-up(lg) { height: 500px; }
+      @media (min-width: 992px) { height: 500px; }
     }
   }
 
@@ -54,13 +55,13 @@
     z-index: 4;
     opacity: .25;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       width: 120%;
       left: 16%;
       transform: rotate(44deg);
     }
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       transform: rotate(45deg);
       width: 100%;
       top: 0;
@@ -69,14 +70,14 @@
       opacity: 1;
     }
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       width: 80%;
       top: -10%;
       right: -30%;
       column-gap: 10px;
     }
 
-    @include media-breakpoint-up(xl) {
+    @media (min-width: 1200px) {
       width: 70%;
       right: -15%;
       top: -15%;
@@ -90,7 +91,7 @@
       background-color: transparent;
       margin-bottom: 5px;
 
-      @include media-breakpoint-up(lg) { margin-bottom: 10px; }
+      @media (min-width: 992px) { margin-bottom: 10px; }
     }
   }
 }
@@ -103,14 +104,14 @@
   color: rgba(#fff, .7);
   right: 20px;
 
-  @include media-breakpoint-up(sm) {
+  @media (min-width: 576px) {
     top: 40px;
     left: 40px;
     right: auto;
     width: 400px;
   }
 
-  @include media-breakpoint-up(md) { width: 410px; }
+  @media (min-width: 768px) { width: 410px; }
 
   .az-logo {
     font-size: 30px;
@@ -123,7 +124,7 @@
     color: #fff;
     letter-spacing: -.5px;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       font-size: 36px;
       letter-spacing: -1px;
     }
@@ -135,7 +136,7 @@
     letter-spacing: .2px;
     margin-bottom: 25px;
 
-    @include media-breakpoint-up(sm) { font-size: 15px; }
+    @media (min-width: 576px) { font-size: 15px; }
   }
 
   .logo-group {
@@ -157,7 +158,7 @@
     font-size: 24px;
     margin-bottom: 20px;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       font-size: 2.03125rem;
     }
   }
@@ -181,12 +182,12 @@
       letter-spacing: 1px;
       padding: 10px 15px;
 
-      @include media-breakpoint-up(md) {
+      @media (min-width: 768px) {
         padding: 10px 25px;
         flex: none;
       }
 
-      @include media-breakpoint-up(lg) { flex: 1; }
+      @media (min-width: 992px) { flex: 1; }
 
       + .btn { margin-left: 5px; }
     }
@@ -199,7 +200,7 @@
       font-size: 24px;
       color: rgba(#fff, .5);
 
-      @include hover-focus() { color: #fff; }
+      &:hover, &:focus { color: #fff; }
 
       + a { margin-left: 8px; }
     }
@@ -217,9 +218,9 @@
     display: block;
     padding: 20px;
 
-    @include media-breakpoint-up(sm) { padding: 40px; }
-    @include media-breakpoint-up(lg) { padding: 100px 40px; }
-    @include media-breakpoint-up(xl) { padding: 100px 0; }
+    @media (min-width: 576px) { padding: 40px; }
+    @media (min-width: 992px) { padding: 100px 40px; }
+    @media (min-width: 1200px) { padding: 100px 0; }
   }
 
   .title-label {
@@ -229,7 +230,7 @@
     color: $indigo;
     margin-bottom: 3px;
 
-    @include media-breakpoint-up(md) { font-size: 11px; }
+    @media (min-width: 768px) { font-size: 11px; }
   }
 
   .title {
@@ -239,16 +240,16 @@
     letter-spacing: -.5px;
     margin-bottom: 10px;
 
-    @include media-breakpoint-up(md) { font-size: 30px; }
+    @media (min-width: 768px) { font-size: 30px; }
   }
 
   .title-text {
     font-weight: 300;
     margin-bottom: 20px;
 
-    @include media-breakpoint-up(sm) { margin-bottom: 40px; }
-    @include media-breakpoint-up(md) { font-size: 16px; }
-    @include media-breakpoint-up(lg) { margin-bottom: 60px; }
+    @media (min-width: 576px) { margin-bottom: 40px; }
+    @media (min-width: 768px) { font-size: 16px; }
+    @media (min-width: 992px) { margin-bottom: 60px; }
   }
 
   .card {
@@ -258,20 +259,20 @@
     overflow: hidden;
     position: relative;
 
-    @include media-breakpoint-up(sm) { height: 155px; }
+    @media (min-width: 576px) { height: 155px; }
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       height: 215px;
       margin-bottom: 15px;
     }
 
-    @include media-breakpoint-up(xl) { height: 255px; }
+    @media (min-width: 1200px) { height: 255px; }
 
-    img { @include transition($transition-base); }
+    img { transition: all 0.3s ease; }
 
     figure {
       margin-bottom: 0;
-      @include hover-focus() {
+      &:hover, &:focus {
         img { transform: scale(1.75,1.75); }
         figcaption { opacity: 1; }
       }
@@ -288,7 +289,7 @@
       justify-content: center;
       background-color: rgba(darken($indigo, 25%), .75);
       opacity: 0;
-      @include transition($transition-base);
+      transition: all 0.3s ease;
 
       .btn {
         text-transform: uppercase;
@@ -297,7 +298,7 @@
         font-weight: 500;
         min-height: inherit;
         padding: 10px 20px;
-        @include border-radius(2px);
+        border-radius: 2px; // Replacing @include border-radius(2px);
       }
     }
 
@@ -335,7 +336,7 @@
     margin-bottom: 0;
     color: #fff;
 
-    @include media-breakpoint-up(md) { font-size: 17px; }
+    @media (min-width: 768px) { font-size: 17px; }
   }
 }
 
@@ -348,10 +349,9 @@
 
   a {
     color: rgba(#fff, .5);
-    @include hover-focus() { color: #fff; }
+    &:hover, &:focus { color: #fff; }
   }
 }
-
 
 // buttons
 .btn-icon-list {
@@ -371,7 +371,7 @@
     line-height: 1;
     font-size: 24px;
 
-    @include media-breakpoint-up(lg) { font-size: 32px; }
+    @media (min-width: 992px) { font-size: 32px; }
   }
 }
 
@@ -470,7 +470,7 @@
     display: inline-flex;
     justify-content: center;
 
-    @include media-breakpoint-up(sm) { padding: 40px; }
+    @media (min-width: 576px) { padding: 40px; }
 
     .dropdown-menu {
       display: block;
@@ -482,7 +482,7 @@
   .dropdown-menu {
     padding: 20px;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       width: 300px;
       padding: 30px 25px;
     }
@@ -500,7 +500,7 @@
 .ql-wrapper-demo {
   background-color: #fff;
 
-  @include media-breakpoint-up(xl) { width: 70%; }
+  @media (min-width: 1200px) { width: 70%; }
 
   .ql-container { height: 250px; }
   .ql-editor {
@@ -517,7 +517,7 @@
   border: 2px solid $gray-200;
   position: relative;
 
-  @include media-breakpoint-up(md) { padding-left: 15px; }
+  @media (min-width: 768px) { padding-left: 15px; }
 
   .ql-container {
     border-width: 0;
@@ -525,7 +525,7 @@
     min-height: 100%;
     padding: 30px;
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       padding: 50px;
       padding-left: 35px;
     }
@@ -543,9 +543,8 @@
   height: 250px;
   @media (max-width: 330px) { width: 290px; }
 
-  @include media-breakpoint-up(lg) { height: 300px; }
+  @media (min-width: 992px) { height: 300px; }
 }
-
 
 .az-content-left-components {
   border-right: 1px solid $gray-200;
@@ -571,7 +570,7 @@
 
       + .nav-link { margin-top: 5px; }
 
-      @include hover() { color: $az-color-primary; }
+      &:hover { color: $az-color-primary; }
 
       &.active {
         color: $az-color-primary;
@@ -594,8 +593,8 @@
 
     a {
       color: $az-color-headline;
-      @include transition($transition-base);
-      @include hover() { color: $gray-500; }
+      transition: all 0.3s ease;
+      &:hover { color: $gray-500; }
     }
 
     &.active { color: $blue; }
@@ -676,7 +675,7 @@
     font-weight: 500;
     font-size: 9px;
     letter-spacing: normal;
-    @include border-radius(1px);
+    border-radius: 1px; // Replacing @include border-radius(1px);
   }
 
   pre {
@@ -701,7 +700,7 @@
     + .az-img-user,
     + .az-avatar {
       margin-left: 5px;
-      @include media-breakpoint-up(sm) { margin-left: 10px; }
+      @media (min-width: 576px) { margin-left: 10px; }
     }
   }
 }

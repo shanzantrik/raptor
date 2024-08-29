@@ -7,7 +7,7 @@
   justify-content: flex-start;
   background-color: #fff; //#fdfdfd;
 
-  @include media-breakpoint-only(xl) { padding: 10px 0 0; }
+  @media (min-width: 1200px) { padding: 10px 0 0; } // Replace media-breakpoint-only(xl)
 
   .az-navbar-three {
     .nav-item {
@@ -45,25 +45,25 @@
 .media-dashboard-one {
   display: block;
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     display: flex;
     align-items: stretch;
-  }
+  } // Replace media-breakpoint-up(lg)
 
   .media-right {
     width: 100%;
     flex-shrink: 0;
 
-    @include media-breakpoint-up(lg) { width: 280px; }
+    @media (min-width: 992px) { width: 280px; } // Replace media-breakpoint-up(lg)
   }
 
   .media-body {
     margin-bottom: 20px;
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       margin-right: 20px;
       margin-bottom: 0;
-    }
+    } // Replace media-breakpoint-up(lg)
   }
 }
 
@@ -211,10 +211,10 @@
     justify-content: space-between;
     border-bottom: 1px solid $gray-300;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       display: flex;
       padding: 15px 20px;
-    }
+    } // Replace media-breakpoint-up(sm)
 
     > .nav {
       .nav-link {
@@ -222,14 +222,14 @@
         font-weight: 500;
         background-color: $gray-200;
 
-        @include media-breakpoint-up(lg) { padding: 8px 20px; }
-        @include media-breakpoint-up(xl) { padding: 8px 30px; }
+        @media (min-width: 992px) { padding: 8px 20px; } // Replace media-breakpoint-up(lg)
+        @media (min-width: 1200px) { padding: 8px 30px; } // Replace media-breakpoint-up(xl)
 
         + .nav-link { margin-left: 2px; }
 
-        @include hover-focus() {
+        &:hover, &:focus {
           background-color: $gray-300;
-        }
+        } // Replace hover-focus()
 
         &.active {
           background-color: $az-color-primary;
@@ -244,7 +244,7 @@
     align-items: center;
     margin-top: 20px;
 
-    @include media-breakpoint-up(sm) { margin-top: 0; }
+    @media (min-width: 576px) { margin-top: 0; } // Replace media-breakpoint-up(sm)
 
     .nav {
       justify-content: flex-end;
@@ -255,13 +255,13 @@
       padding: 5px 10px;
       text-transform: capitalize;
 
-      @include media-breakpoint-up(sm) { padding: 8px 10px; }
+      @media (min-width: 576px) { padding: 8px 10px; } // Replace media-breakpoint-up(sm)
 
       + .nav-link { margin-left: 2px; }
 
       span:first-child {
         display: none;
-        @include media-breakpoint-up(md) { display: inline; }
+        @media (min-width: 768px) { display: inline; } // Replace media-breakpoint-up(md)
       }
 
       span:last-child {
@@ -269,12 +269,12 @@
         font-size: 11px;
         font-weight: 500;
 
-        @include media-breakpoint-up(md) { display: none; }
+        @media (min-width: 768px) { display: none; } // Replace media-breakpoint-up(md)
       }
 
-      @include hover-focus() {
+      &:hover, &:focus {
         background-color: $gray-200;
-      }
+      } // Replace hover-focus()
 
       &.active {
         background-color: $gray-500;
@@ -288,7 +288,7 @@
     overflow: hidden;
     padding: 0;
 
-    @include media-breakpoint-up(lg) { padding: 0 20px; }
+    @media (min-width: 992px) { padding: 0 20px; } // Replace media-breakpoint-up(lg)
   }
 
   .flot-wrapper {
@@ -298,11 +298,11 @@
     margin-left: -31px;
     margin-top: -25px;
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       margin-right: -9px;
       margin-left: 10px;
       margin-top: 0;
-    }
+    } // Replace media-breakpoint-up(lg)
 
     .flot-x-axis > div {
       transform: translate(22px,-23px);
@@ -318,7 +318,7 @@
     height: 250px;
     position: relative;
 
-    @include media-breakpoint-up(lg) { height: 300px; }
+    @media (min-width: 992px) { height: 300px; } // Replace media-breakpoint-up(lg)
   }
 
   .more-info {
@@ -326,15 +326,15 @@
     top: 10px;
     right: 10px;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       right: 20px;
       top: 30px;
-    }
+    } // Replace media-breakpoint-up(sm)
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) {
       right: 30px;
       top: 50px;
-    }
+    } // Replace media-breakpoint-up(lg)
 
     div {
       display: flex;
@@ -367,7 +367,7 @@
     width: calc(100vw - 40px);
     margin-bottom: -8px;
 
-    @include media-breakpoint-up(lg) { width: auto; }
+    @media (min-width: 992px) { width: auto; } // Replace media-breakpoint-up(lg)
 
     .media-icon {
       color: #f7931a;
@@ -411,8 +411,8 @@
   border-color: $gray-300;
   width: calc(100vw - 38px);
 
-  @include media-breakpoint-up(lg) { width: 634px; }
-  @include media-breakpoint-up(xl) { width: 753px; }
+  @media (min-width: 992px) { width: 634px; } // Replace media-breakpoint-up(lg)
+  @media (min-width: 1200px) { width: 753px; } // Replace media-breakpoint-up(xl)
 
   .card-header {
     border-bottom: 1px solid $gray-300;
@@ -439,7 +439,7 @@
 
     .tab-item {
       min-width: 203px;
-      @include media-breakpoint-up(sm) { min-width: 150px; }
+      @media (min-width: 576px) { min-width: 150px; } // Replace media-breakpoint-up(sm)
     }
 
     .tab-link {
@@ -447,7 +447,7 @@
       font-weight: 500;
       align-items: flex-start;
       padding-top: 8px;
-      @include hover() { background-color: $gray-300; }
+      &:hover { background-color: $gray-300; } // Replace hover()
 
       &.active {
         &,
@@ -467,11 +467,11 @@
     background-color: #fff;
     border-bottom: 1px solid $gray-300;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) {
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
+    } // Replace media-breakpoint-up(sm)
 
     .az-content-label { margin-bottom: 3px; }
 
@@ -513,7 +513,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
-      @include border-radius(100%);
+      border-radius: 100%; // Replace border-radius(100%)
 
       i { line-height: 0; }
     }
@@ -537,7 +537,7 @@
           display: block;
           width: 8px;
           height: 8px;
-          @include border-radius(100%);
+          border-radius: 100%; // Replace border-radius(100%)
         }
 
         &:last-child {
@@ -554,10 +554,10 @@
   border-color: $gray-300;
   margin-top: 20px;
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) {
     width: calc(33.33333% - 13px);
     margin-top: 0;
-  }
+  } // Replace media-breakpoint-up(lg)
 
   .card-title {
     text-transform: uppercase;
@@ -618,7 +618,7 @@
     width: 42px;
     height: 42px;
     color: #fff;
-    @include border-radius(100%);
+    border-radius: 100%; // Replace border-radius(100%)
     display: flex;
     align-items: center;
     justify-content: center;
@@ -650,7 +650,7 @@
       text-align: right;
       display: inline-block;
 
-      @include hover-focus() { color: $blue; }
+      &:hover, &:focus { color: $blue; } // Replace hover-focus()
     }
 
     div + div { margin-top: 5px; }
@@ -682,9 +682,9 @@
       padding-left: 10px;
       padding-right: 10px;
 
-      @include hover-focus() {
+      &:hover, &:focus {
         background-color: darken($gray-100, 2%);
-      }
+      } // Replace hover-focus()
 
       span {
         display: block;

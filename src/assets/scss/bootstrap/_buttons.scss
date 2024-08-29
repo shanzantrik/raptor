@@ -4,21 +4,51 @@
   border-width: 0;
   line-height: 1.538;
   padding: 9px 20px;
-  @include border-radius(0);
+  border-radius: 0;  /* Replaced @include border-radius(0); */
   transition: none;
   min-height: $az-height-base;
 
   &:active,
-  &:focus { box-shadow: none; }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
-.btn-light { @include button-variant($gray-300, darken($gray-300, 5%)); }
-.btn-indigo { @include button-variant($indigo, darken($indigo, 5%)); }
-.btn-purple { @include button-variant($purple, darken($purple, 5%)); }
-.btn-pink { @include button-variant($pink, darken($pink, 5%)); }
+.btn-light {
+  background-color: $gray-300;
+  color: darken($gray-300, 5%);
+  border-color: darken($gray-300, 5%);
+}
 
-.btn-gray-500 { @include button-variant($gray-500, darken($gray-500, 5%)); }
-.btn-gray-700 { @include button-variant($gray-700, darken($gray-700, 5%)); }
+.btn-indigo {
+  background-color: $indigo;
+  color: darken($indigo, 5%);
+  border-color: darken($indigo, 5%);
+}
+
+.btn-purple {
+  background-color: $purple;
+  color: darken($purple, 5%);
+  border-color: darken($purple, 5%);
+}
+
+.btn-pink {
+  background-color: $pink;
+  color: darken($pink, 5%);
+  border-color: darken($pink, 5%);
+}
+
+.btn-gray-500 {
+  background-color: $gray-500;
+  color: darken($gray-500, 5%);
+  border-color: darken($gray-500, 5%);
+}
+
+.btn-gray-700 {
+  background-color: $gray-700;
+  color: darken($gray-700, 5%);
+  border-color: darken($gray-700, 5%);
+}
 
 [class*=btn-outline-] {
   padding: 0.4rem 1rem;
@@ -26,19 +56,28 @@
   border-width: 1px;
   background-color: transparent;
 
-  @include hover-focus() { color: #fff; }
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
 }
 
 .btn-outline-indigo {
   border-color: $indigo;
   color: $indigo;
 
-  @include hover-focus() { background-color: $indigo; }
+  &:hover,
+  &:focus {
+    background-color: $indigo;
+  }
 }
 
 .btn-outline-light {
   border-color: $gray-500;
   color: $gray-500;
 
-  @include hover-focus() { background-color: $gray-500; }
+  &:hover,
+  &:focus {
+    background-color: $gray-500;
+  }
 }

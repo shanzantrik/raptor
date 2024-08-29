@@ -1,7 +1,7 @@
 /* ###### 6.4 Header  ###### */
 
 .az-header-menu-show {
-  @include media-breakpoint-down(md) {
+  @media (max-width: 991px) { // Replacing @include media-breakpoint-down(md)
     overflow: hidden;
 
     .az-header-menu {
@@ -23,13 +23,13 @@
   box-shadow: 0 0 30px rgba($gray-900, 0.08);
   border-bottom: 1px solid rgba($gray-900, 0.12);
 
-  @include media-breakpoint-up(lg) {
-        position: fixed;
-        z-index: 100;
-        height: 64px;
-        width: 100%;
-        top: 0;
-        left: 0;
+  @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
+    position: fixed;
+    z-index: 100;
+    height: 64px;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
 
   > .container,
@@ -41,24 +41,24 @@
     padding-left: 20px;
     padding-right: 20px;
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
       padding-left: 25px;
       padding-right: 25px;
     }
   }
 
   > .container {
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
       padding: 0;
     }
-    @include media-breakpoint-down(md) {
+    @media (max-width: 767px) { // Replacing @include media-breakpoint-down(md)
       max-width: none;
     }
   }
 
   .az-header-left .az-logo {
     display: none;
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
       display: flex;
     }
   }
@@ -87,7 +87,7 @@
   position: relative;
   top: -2px;
 
-  @include hover-focus() {
+  &:hover, &:focus {
     color: $az-color-primary;
   }
 
@@ -111,7 +111,7 @@
   display: flex;
   align-items: center;
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
     margin-right: 25px;
   }
 
@@ -121,8 +121,8 @@
     width: 15px;
     height: 2px;
     background-color: $gray-900;
-    @include border-radius();
-    @include transition($transition-base);
+    border-radius: 2px; // Replacing @include border-radius();
+    transition: all 0.3s ease; // Replacing @include transition($transition-base);
 
     &::before,
     &::after {
@@ -132,8 +132,8 @@
       width: 20px;
       height: 2px;
       background-color: $gray-900;
-      @include border-radius();
-      @include transition($transition-base);
+      border-radius: 2px; // Replacing @include border-radius();
+      transition: all 0.3s ease; // Replacing @include transition($transition-base);
     }
 
     &::before {
@@ -155,9 +155,9 @@
   overflow-y: auto;
   z-index: 9999;
   transform: translateX(-$az-width-sidebar);
-  @include transition(all 0.35s);
+  transition: all 0.35s; // Replacing @include transition(all 0.35s);
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
     display: flex;
     align-self: stretch;
     background-color: transparent;
@@ -167,6 +167,7 @@
     overflow-y: visible;
     transform: none;
     z-index: auto;
+
     > .nav {
       .nav-item {
         display: flex;
@@ -185,7 +186,7 @@
     flex-direction: column;
     padding: 20px;
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
       padding: 0;
       flex-direction: row;
       align-items: center;
@@ -195,7 +196,7 @@
   nav {
     &.az-menu-sub {
       &.dropdown-menu {
-        @include media-breakpoint-down(md) {
+        @media (max-width: 767px) { // Replacing @include media-breakpoint-down(md)
           position: static !important;
           transform: translate(0) !important;
           border-width: 0;
@@ -224,7 +225,7 @@
     + .nav-item {
       margin-top: 10px;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
         margin-top: 0;
         margin-left: 30px;
       }
@@ -239,13 +240,13 @@
       font-weight: 500;
       padding: 0;
       cursor: pointer;
-      @include transition($transition-base);
+      transition: all 0.3s ease; // Replacing @include transition($transition-base);
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
         font-size: $font-size-base;
       }
 
-      @include hover() {
+      &:hover, &:focus {
         color: $az-color-primary;
         i {
           color: $az-color-primary;
@@ -263,7 +264,7 @@
         opacity: 0.5;
         border: 0;
 
-        @include media-breakpoint-up(lg) {
+        @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
           margin-left: 5px;
         }
       }
@@ -274,7 +275,7 @@
         margin-right: 15px;
         width: 16px;
 
-        @include media-breakpoint-up(lg) {
+        @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
           font-size: 18px;
           margin-right: 7px;
         }
@@ -298,9 +299,9 @@
           left: -20px;
           width: 2px;
           background-color: $az-color-primary;
-          @include border-radius();
+          border-radius: 2px; // Replacing @include border-radius();
 
-          @include media-breakpoint-up(lg) {
+          @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
             top: auto;
             bottom: 0;
             left: 0;
@@ -314,7 +315,7 @@
 
     &.show {
       &::before {
-        @include media-breakpoint-up(lg) {
+        @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
           display: block;
         }
       }
@@ -330,7 +331,7 @@
   padding: 0 20px;
   border-bottom: 1px solid rgba($gray-900, 0.05);
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
     display: none;
   }
 
@@ -345,13 +346,13 @@
   margin-left: 32px;
   margin-top: 12px;
   display: none;
-  @include media-breakpoint-down(md) {
+  @media (max-width: 767px) { // Replacing @include media-breakpoint-down(md)
     border: 0;
     position: static !important;
     transform: none !important;
   }
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
     position: absolute;
     top: 10px !important; // Overrideing react-bootstrap inline css
     background-color: #fff;
@@ -377,7 +378,7 @@
       border-top: 1px dotted $gray-200;
     }
 
-    @include hover-focus() {
+    &:hover, &:focus {
       color: $az-color-primary;
     }
 
@@ -385,7 +386,7 @@
       color: $az-color-primary;
       font-weight: 500;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
         font-weight: 400;
       }
     }
@@ -406,30 +407,30 @@
   .container {
     padding: 0;
 
-    @include media-breakpoint-down(md) {
+    @media (max-width: 767px) { // Replacing @include media-breakpoint-down(md)
       max-width: none;
     }
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
       display: flex;
       background-color: #fff;
       border: 2px solid rgba($gray-900, 0.12);
     }
 
     > div {
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
         display: flex;
         padding: 20px;
         flex: 1;
         margin-top: 0;
       }
 
-      @include media-breakpoint-up(xl) {
+      @media (min-width: 1200px) { // Replacing @include media-breakpoint-up(xl)
         padding: 20px 25px;
       }
 
       + div {
         margin-top: 25px;
-        @include media-breakpoint-up(lg) {
+        @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
           margin-top: 0;
           border-left: 1px solid rgba($gray-900, 0.05);
         }
@@ -441,7 +442,7 @@
     min-width: 120px;
     flex-direction: column;
 
-    @include media-breakpoint-up(xl) {
+    @media (min-width: 1200px) { // Replacing @include media-breakpoint-up(xl)
       min-width: 140px;
     }
 
@@ -450,14 +451,14 @@
       margin-top: 6px;
       padding-top: 6px;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
         margin-left: 20px;
         margin-top: 31px;
         padding-top: 0;
         border-top: 0;
       }
 
-      @include media-breakpoint-up(xl) {
+      @media (min-width: 1200px) { // Replacing @include media-breakpoint-up(xl)
         margin-left: 25px;
       }
     }
@@ -472,7 +473,7 @@
       margin-bottom: 15px;
       margin-top: 30px;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
         font-size: 12px;
       }
 
@@ -489,7 +490,7 @@
   position: relative;
   display: none;
 
-  @include media-breakpoint-up(lg) {
+  @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
     display: block;
   }
 
@@ -522,7 +523,7 @@
     font-size: 16px;
     padding-right: 13px;
 
-    @include hover-focus() {
+    &:hover, &:focus {
       color: $gray-900;
     }
   }
@@ -538,10 +539,10 @@
     align-items: center;
     justify-content: center;
     color: $gray-500;
-    @include border-radius();
-    @include transition($transition-base);
+    border-radius: 2px; // Replacing @include border-radius();
+    transition: all 0.3s ease; // Replacing @include transition($transition-base);
 
-    @include hover-focus() {
+    &:hover, &:focus {
       color: $gray-700;
     }
 
@@ -565,11 +566,11 @@
     letter-spacing: 0.5px;
     display: flex;
     align-items: center;
-    @include border-radius();
-    @include transition($transition-base);
+    border-radius: 2px; // Replacing @include border-radius();
+    transition: all 0.3s ease; // Replacing @include transition($transition-base);
     margin-left: 20px;
 
-    @include hover-focus() {
+    &:hover, &:focus {
       background-color: darken($indigo, 5%);
     }
   }
@@ -592,7 +593,7 @@
     line-height: 0;
   }
 
-  @include hover-focus() {
+  &:hover, &:focus {
     color: $gray-700;
   }
 }
@@ -618,7 +619,7 @@
         width: 7px;
         height: 7px;
         background-color: $red;
-        @include border-radius(100%);
+        border-radius: 50%; // Replacing @include border-radius(100%);
       }
     }
   }
@@ -645,7 +646,7 @@
         z-index: 901;
         display: none;
 
-        @include media-breakpoint-up(lg) {
+        @media (min-width: 992px) { // Replacing @include media-breakpoint-up(lg)
           bottom: -36px;
         }
       }
@@ -664,9 +665,9 @@
     border-width: 0;
     margin-top: 0;
     z-index: 900;
-    @include border-radius(0);
+    border-radius: 0; // Replacing @include border-radius(0);
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) { // Replacing @include media-breakpoint-up(sm)
       width: 300px;
       position: absolute;
       top: 52px !important; //Overrideing react-bootstrap inline css
@@ -679,7 +680,7 @@
       border-width: 2px;
     }
 
-    @include media-breakpoint-down(sm) {
+    @media (max-width: 575px) { // Replacing @include media-breakpoint-down(sm)
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
@@ -696,7 +697,7 @@
 
   &.show {
     > a::after {
-      @include media-breakpoint-up(sm) {
+      @media (min-width: 576px) { // Replacing @include media-breakpoint-up(sm)
         display: block;
       }
     }
@@ -733,7 +734,7 @@
       color: $gray-900;
     }
 
-    @include hover-focus() {
+    &:hover, &:focus {
       cursor: pointer;
       z-index: 1;
 
@@ -815,9 +816,9 @@
     border-width: 0;
     margin-top: 0;
     z-index: 900;
-    @include border-radius(0);
+    border-radius: 0; // Replacing @include border-radius(0);
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) { // Replacing @include media-breakpoint-up(sm)
       padding-top: 20px;
       position: absolute;
       top: 56px !important;
@@ -830,7 +831,7 @@
       border-width: 2px;
     }
 
-    @include media-breakpoint-down(sm) {
+    @media (max-width: 575px) { // Replacing @include media-breakpoint-down(sm)
       position: fixed !important;
       top: 0 !important;
       left: 0 !important;
@@ -858,7 +859,7 @@
       }
     }
 
-    @include hover-focus() {
+    &:hover, &:focus {
       background-color: transparent;
       color: $az-color-primary;
     }
@@ -874,7 +875,7 @@
 
   &.show {
     .az-img-user::before {
-      @include media-breakpoint-up(sm) {
+      @media (min-width: 576px) { // Replacing @include media-breakpoint-up(sm)
         display: block;
       }
     }
@@ -895,7 +896,7 @@
     height: 120px;
     margin-bottom: 20px;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) { // Replacing @include media-breakpoint-up(sm)
       width: 80px;
       height: 80px;
     }
@@ -911,7 +912,7 @@
     color: $gray-900;
     margin-bottom: 0;
 
-    @include media-breakpoint-up(sm) {
+    @media (min-width: 576px) { // Replacing @include media-breakpoint-up(sm)
       font-size: 18px;
     }
   }
