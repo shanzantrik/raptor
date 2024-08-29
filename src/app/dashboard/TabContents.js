@@ -116,66 +116,6 @@ const totalUsersChartOptions = {
   }
 };
 
-const allSessionsChartData = {
-  labels: ['0', '1', '2', '3', '4', '5', '6', '7'],
-  datasets: [
-    {
-      label: '# of Votes',
-      data: [2, 4, 10, 20, 45, 40, 35, 18],
-      borderWidth: 1,
-      fill: false,
-      backgroundColor: '#560bd0'
-    },
-    {
-      label: '# of Rate',
-      data: [3, 6, 15, 35, 50, 45, 35, 25],
-      borderWidth: 1,
-      fill: false,
-      backgroundColor: '#cad0e8'
-    }
-  ]
-};
-
-const allSessionsChartOptions = {
-  plugins: {
-    legend: {
-      display: false,
-    },
-    title: {
-      display: false,
-    }
-  },
-  scales: {
-    y: {
-      display: true,
-      grid: {
-        drawBorder: false,
-      },
-      ticks: {
-        beginAtZero: true,
-        font: {
-          size: 11,
-        },
-        max: 80
-      }
-    },
-    x: {
-      barPercentage: 0.6,
-      grid: {
-        color: 'rgba(0,0,0,0.08)',
-        drawBorder: false
-      },
-      ticks: {
-        beginAtZero: true,
-        font: {
-          size: 11,
-        },
-        display: false
-      }
-    }
-  }
-};
-
 const TabContents = () => {
   return (
     <div className="row row-sm mg-b-20">
@@ -263,20 +203,33 @@ const TabContents = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-12 mg-t-20">
-            <div className="card card-dashboard-three">
+          <div className="col-sm-6 mg-t-20 mg-sm-t-20">
+            <div className="card card-dashboard-two">
               <div className="card-header">
-                <p>All Sessions</p>
-                <h6>16,869 <small className="tx-success"><i className="icon ion-md-arrow-up"></i> 2.87%</small></h6>
-                <small>The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc.</small>
+                <h6>86k <i className="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
+                <p>Total Users</p>
               </div>
               <div className="card-body">
-                <div className="chart d-flex align-items-end">
-                  <Bar data={allSessionsChartData} options={allSessionsChartOptions} />
+                <div className="chart-wrapper">
+                  <Bar data={totalUsersChartData} options={totalUsersChartOptions} />
                 </div>
               </div>
             </div>
           </div>
+          <div className="col-sm-6 mg-t-20 mg-sm-t-20">
+            <div className="card card-dashboard-two">
+              <div className="card-header">
+                <h6>86k <i className="icon ion-md-trending-down tx-danger"></i> <small>0.86%</small></h6>
+                <p>Total Users</p>
+              </div>
+              <div className="card-body">
+                <div className="chart-wrapper">
+                  <Bar data={totalUsersChartData} options={totalUsersChartOptions} />
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       <div className="col-lg-2 mg-t-20 mg-lg-t-0">
@@ -306,6 +259,9 @@ const TabContents = () => {
                 <p className="tx-primary">5,215</p>
                 <span>28.53% (-100.00%)</span>
               </div>
+            </div>
+              <div>
+              <a href="#/">View All</a>
             </div>
           </div>
         </div>

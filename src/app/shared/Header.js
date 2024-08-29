@@ -40,23 +40,23 @@ const Header = () => {
     <div>
       <div className="az-header">
         <div className="container">
-          <div className="az-header-left">
-            <a href="#/" className="az-logo">
-              <span></span> Raptor
-            </a>
-            <a
-              id="azMenuShow"
-              onClick={toggleHeaderMenu}
-              className="az-header-menu-icon d-lg-none"
-              href="#/"
-            >
-              <span></span>
-            </a>
-          </div>
+        <div className="az-header-left">
+              <a href="#/" className="az-logo">
+                <span>ra</span>p<span>tor</span>
+              </a>
+              <a
+                id="azMenuShow"
+                onClick={event => this.toggleHeaderMenu(event)}
+                className="az-header-menu-icon d-lg-none"
+                href="#/"
+              >
+                <span></span>
+              </a>
+            </div>
           <div className="az-header-menu">
             <div className="az-header-menu-header">
               <Link to="/" className="az-logo">
-                <span></span> Raptor
+                <span>Ra</span>p<span>tor</span>
               </Link>
               <a
                 href="#/"

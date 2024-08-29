@@ -4,17 +4,17 @@
   .az-sidebar {
     background-color: $gray-100;
     border-right-color: $gray-300;
-    box-shadow: 2px 0 3px rgba($gray-900, .04);
+    box-shadow: 2px 0 3px rgba($gray-900, 0.04);
   }
 }
 
 .az-content-dashboard-five {
   background-color: darken($gray-100, 2%);
-  @include transition(all 0.4s);
+  transition: all 0.4s ease;
 
   .az-header {
     background-color: #fcfcfc;
-    box-shadow: 0 2px 3px rgba($gray-900, .05);
+    box-shadow: 0 2px 3px rgba($gray-900, 0.05);
   }
 
   .az-header-menu-icon { margin-right: 0; }
@@ -22,7 +22,7 @@
 
   .az-content-header {
     padding: 20px 20px 0;
-    @include media-breakpoint-up(xl) { padding: 25px 25px 0; }
+    @media (min-width: 1200px) { padding: 25px 25px 0; }
   }
 
   .az-content-body { padding: 20px; }
@@ -133,8 +133,8 @@
 
 .dashboard-five-stacked-chart {
   height: 200px;
-  @include media-breakpoint-up(md) { height: 240px; }
+  @media (min-width: 768px) { height: 240px; }
   @media (min-width: 847px) { height: 260px; }
-  @include media-breakpoint-up(lg) { height: 240px; }
+  @media (min-width: 992px) { height: 240px; }
   @media (min-width: 1067px) { height: 260px; }
 }
