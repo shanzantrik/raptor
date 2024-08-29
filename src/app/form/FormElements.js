@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import ComponentsSidebar from '../shared/ComponentsSidebar';
-import { Form, Dropdown, InputGroup, FormControl } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import InputMask from "react-input-mask";
 import { SketchPicker, PhotoshopPicker, SwatchesPicker } from 'react-color';
 import DatePicker from 'react-datepicker';
