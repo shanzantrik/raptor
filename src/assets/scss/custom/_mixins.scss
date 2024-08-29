@@ -1,3 +1,6 @@
+// Import the sass:math module at the top of the file
+@use 'sass:math';
+
 // Ion Rangeslider Skins
 @mixin irs-color-variant($color) {
   .irs-bar,
@@ -40,6 +43,7 @@
     }
   }
 }
+
 @mixin donut-chart(
   $name,
   $perc,
@@ -51,7 +55,7 @@
   $textColor: $color,
   $textSize: 40px
 ) {
-  $deg: ($perc / 100 * 360) + deg;
+  $deg: math.div($perc, 100) * 360 + deg;
   $deg1: 90deg;
   $deg2: $deg;
 
@@ -59,7 +63,7 @@
   @if $perc < 50 {
     $base: $color;
     $color: $base;
-    $deg1: ($perc / 100 * 360 + 90) + deg;
+    $deg1: math.div($perc, 100) * 360 + 90deg;
     $deg2: 0deg;
   }
 
@@ -71,13 +75,13 @@
 
       .slice {
         &.one {
-          clip: rect(0, $size, $size / 2, 0);
+          clip: rect(0, $size, math.div($size, 2), 0);
           transform: rotate($deg1);
           background: $color;
         }
 
         &.two {
-          clip: rect(0, $size / 2, $size, 0);
+          clip: rect(0, math.div($size, 2), $size, 0);
           transform: rotate($deg2);
           background: $base;
         }
@@ -86,13 +90,13 @@
       .chart-center {
         top: $width;
         left: $width;
-        width: $size - ($width * 2);
-        height: $size - ($width * 2);
+        width: $size - (math.div($width, 2) * 2);
+        height: $size - (math.div($width, 2) * 2);
         background: $center;
 
         span {
           font-size: $textSize;
-          line-height: $size - ($width * 2);
+          line-height: $size - (math.div($width, 2) * 2);
           color: $textColor;
 
           &:after {
@@ -103,6 +107,7 @@
     }
   }
 }
+
 // Define the hover-focus mixin
 @mixin hover-focus {
   &:hover,

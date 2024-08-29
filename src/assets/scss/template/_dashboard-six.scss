@@ -84,16 +84,6 @@
 
   //donut-chart($name, $perc, $size, $width, $base, $center, $color, $textColor: $color, $textSize: 40px)
 
-  // $name = class name
-  // $perc = donut percentage value
-  // $size = size of donut
-  // $width = width of chart
-  // $base = thickness of donut
-  // $center = background color of the percentage
-  // $color = background color of donut hole
-  // $textColor = color of text in center and the percentage
-  // $textSize = size of text
-
   @include donut-chart('.chart1', 75, 140px, 10px, $gray-300, #fff, $purple);
   @include donut-chart('.chart2', 68, 140px, 10px, $gray-300, #fff, $blue);
 
@@ -330,7 +320,6 @@
         th {
           padding: 10px 12px;
           line-height: 1;
-
           &:last-child { border-left: 1px solid $gray-300; }
         }
       }
