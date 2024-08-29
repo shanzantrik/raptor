@@ -2527,7 +2527,7 @@
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-14.5.2.tgz#db7257d727c891905947bd1c1a99da20e03c2ebd"
   integrity sha512-YAh82Wh4TIrxYLmfGcixwD18oIjyC1pFQC2Y01F2lzV2HTMiYrI0nze0FD0ocB//CKS/7jIUgae+adPqxK5yCQ==
 
-"@tinymce/tinymce-react@^4.5.0":
+"@tinymce/tinymce-react@^4.5.11":
   version "6.0.0-rc.20240719085314016.shaf6b7a13"
   resolved "https://registry.yarnpkg.com/@tinymce/tinymce-react/-/tinymce-react-6.0.0-rc.20240719085314016.shaf6b7a13.tgz#88032d4ec6980f264948285626a168a94cf36726"
   integrity sha512-+rikhlmT4fT4sm/+AMKepScvKVpO1mMXrA9X3ME/5vazJtJyDyrecu+2MEQcB9fKahDkppDOMIYfYUqgiC/7WQ==
