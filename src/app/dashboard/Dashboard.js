@@ -193,7 +193,69 @@ export class Dashboard extends Component {
               <p className="az-dashboard-text">Inventory Overview</p>
             </div>
             <div className="az-dashboard-one-title">
-              {/* Your dashboard content */}
+             <div className="az-content-header-right">
+                <div className="media">
+                  <div className="media-body">
+                    <label>Domains</label>
+                    <h4>30</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Sub Domains</label>
+                    <h4>15</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Active IP<small>s</small></label>
+                    <h4>26</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Net Blocks</label>
+                    <h4>10</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Open Ports</label>
+                    <h4>3</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Applications</label>
+                    <h4>38</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>DNS Records</label>
+                    <h4>25</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Leaked Credentials</label>
+                    <h4>10</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>API<small>s</small></label>
+                    <h4>17</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+                <div className="media">
+                  <div className="media-body">
+                    <label>Active Vulnerbilities</label>
+                    <h4>65</h4>
+                  </div>{/* media-body */}
+                </div>{/* media */}
+              </div>
+                <a href="#/" className="btn btn-primary">Details</a>
             </div>
             <div className="az-dashboard-nav">
               <DashboardTabs />
