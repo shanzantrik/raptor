@@ -1,7 +1,7 @@
 {
   "name": "raptor",
   "version": "0.1.0",
-  "homepage": "http://localhost:3000/dashboard",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
