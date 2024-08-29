@@ -48,6 +48,9 @@
     "typescript": "^5.5.4",
     "typicons.font": "^2.1.0"
   },
+  "engines": {
+    "node": "20.17.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
