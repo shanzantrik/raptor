@@ -37,56 +37,46 @@ const Header = () => {
   }, [location]);
 
   return (
-    <div>
-      <div className="az-header">
-        <div className="container">
-        <div className="az-header-left">
-              <a href="#/" className="az-logo">
-                <span>ra</span>p<span>tor</span>
-              </a>
-              <a
-                id="azMenuShow"
-                onClick={event => this.toggleHeaderMenu(event)}
-                className="az-header-menu-icon d-lg-none"
-                href="#/"
-              >
-                <span></span>
-              </a>
-            </div>
-          <div className="az-header-menu">
-            <div className="az-header-menu-header">
-              <Link to="/" className="az-logo">
-                <span>Ra</span>p<span>tor</span>
-              </Link>
-              <a
-                href="#/"
-                onClick={toggleHeaderMenu}
-                className="close"
-              >
-                &times;
-              </a>
-            </div>
-            <ul className="nav">
-              <li className={isPathActive("/dashboard") ? "nav-item active" : "nav-item"}>
-                <Link to="/dashboard" className="nav-link">
-                  <i className="typcn typcn-chart-area-outline"></i> Dashboard
+<div>
+  <div className="az-header pb40">
+    <div className="container-fluid d-flex justify-content-between align-items-center">
+
+      <div className="az-header-left d-flex align-items-center">
+        <a href="#/" className="az-logo">
+          <span>ra</span>p<span>tor</span>
+        </a>
+        <a
+          id="azMenuShow"
+          onClick={toggleHeaderMenu}
+          className="az-header-menu-icon d-lg-none"
+          href="#/"
+        >
+          <span></span>
+        </a>
+      </div>
+
+      <div className="az-header-menu d-none d-lg-flex align-items-center">
+        <ul className="nav">
+          <li className={isPathActive("/dashboard") ? "nav-item active" : "nav-item"}>
+            <Link to="/dashboard" className="nav-link">
+              <i className="typcn typcn-chart-area-outline"></i> Dashboard
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Dropdown className={isPathActive("/general-pages") ? "nav-item active" : "nav-item"}>
+              <Dropdown.Toggle as={"a"} className="nav-link with-sub">
+                <i className="typcn typcn-document"></i> Surface
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="az-menu-sub">
+                <Link to="#" className={isPathActive("/general-pages/signin") ? "nav-link active" : "nav-link"}>
+                  Scans
                 </Link>
-              </li>
-              <li className="nav-item">
-                <Dropdown className={isPathActive("/general-pages") ? "nav-item active" : "nav-item"}>
-                  <Dropdown.Toggle as={"a"} className="nav-link with-sub">
-                    <i className="typcn typcn-document"></i> Surface
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="az-menu-sub">
-                    <Link to="#" className={isPathActive("/general-pages/signin") ? "nav-link active" : "nav-link"}>
-                      Scans
-                    </Link>
-                    <Link to="#" className={isPathActive("/general-pages/signup") ? "nav-link active" : "nav-link"}>
-                      Download reports
-                    </Link>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </li>
+                <Link to="#" className={isPathActive("/general-pages/signup") ? "nav-link active" : "nav-link"}>
+                  Download reports
+                </Link>
+              </Dropdown.Menu>
+            </Dropdown>
+          </li>
               <li className="nav-item">
                 <Dropdown className={isPathActive("/ui-elements") || isPathActive("/form") || isPathActive("/charts") || isPathActive("/tables") ? "nav-item active" : "nav-item"}>
                   <Dropdown.Toggle as={"a"} className="nav-link with-sub">
@@ -155,51 +145,46 @@ const Header = () => {
                   <i className="typcn typcn-document-text"></i> Rules
                 </Link>
               </li>
-            </ul>
-          </div>
-          <div className="az-header-right">
-            <a href="#/" className="az-header-search-link">
-              <i className="fas fa-file-alt"></i>
-            </a>
-            <a href="#/" className="az-header-search-link">
-              <i className="fas fa-search"></i>
-            </a>
-            <div className="az-header-message">
-              <Link to="#/">
-                <i className="typcn typcn-messages"></i>
-              </Link>
+        </ul>
+      </div>
+
+      <div className="az-header-right d-flex align-items-center">
+        <a href="#/" className="az-header-search-link">
+          <i className="fas fa-file-alt"></i>
+        </a>
+        <a href="#/" className="az-header-search-link">
+          <i className="fas fa-search"></i>
+        </a>
+        <div className="az-header-message">
+          <Link to="#/">
+            <i className="typcn typcn-messages"></i>
+          </Link>
+        </div>
+        <Dropdown className="az-header-notification">
+          <Dropdown.Toggle as={"a"} className="new">
+            <i className="typcn typcn-bell"></i>
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <div className="az-dropdown-header mg-b-20 d-sm-none">
+              <a href="#/" onClick={closeMenu} className="az-header-arrow">
+                <i className="icon ion-md-arrow-back"></i>
+              </a>
             </div>
-            <Dropdown className="az-header-notification">
-              <Dropdown.Toggle as={"a"} className="new">
-                <i className="typcn typcn-bell"></i>
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <div className="az-dropdown-header mg-b-20 d-sm-none">
-                  <a href="#/" onClick={closeMenu} className="az-header-arrow">
-                    <i className="icon ion-md-arrow-back"></i>
-                  </a>
+            <h6 className="az-notification-title">Notifications</h6>
+            <p className="az-notification-text">You have 2 unread notifications</p>
+            <div className="az-notification-list">
+              <div className="media new">
+                <div className="az-img-user">
+                  <img src={require("../../assets/images/img2.jpg")} alt="" />
                 </div>
-                <h6 className="az-notification-title">Notifications</h6>
-                <p className="az-notification-text">
-                  You have 2 unread notification
-                </p>
-                <div className="az-notification-list">
-                  <div className="media new">
-                    <div className="az-img-user">
-                      <img
-                        src={require("../../assets/images/img2.jpg")}
-                        alt=""
-                      ></img>
-                    </div>
-                    <div className="media-body">
-                      <p>
-                        Congratulate <strong>Socrates Itumay</strong> for work
-                        anniversaries
-                      </p>
-                      <span>Mar 15 12:32pm</span>
-                    </div>
-                  </div>
-                  <div className="media new">
+                <div className="media-body">
+                  <p>
+                    Congratulate <strong>Socrates Itumay</strong> for work anniversaries
+                  </p>
+                  <span>Mar 15 12:32pm</span>
+                </div>
+              </div>
+                                <div className="media new">
                     <div className="az-img-user online">
                       <img
                         src={require("../../assets/images/img3.jpg")}
@@ -243,57 +228,52 @@ const Header = () => {
                       <span>Mar 12 10:40pm</span>
                     </div>
                   </div>
-                </div>
-                <div className="dropdown-footer">
-                  <a href="#/">View All Notifications</a>
-                </div>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown className="az-profile-menu">
-              <Dropdown.Toggle as={"a"} className="az-img-user">
-                <img
-                  src={require("../../assets/images/photome.jpg")}
-                  alt=""
-                ></img>
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <div className="az-dropdown-header d-sm-none">
-                  <a href="#/" onClick={closeMenu} className="az-header-arrow">
-                    <i className="icon ion-md-arrow-back"></i>
-                  </a>
-                </div>
-                <div className="az-header-profile">
-                  <div className="az-img-user">
-                    <img
-                      src={require("../../assets/images/photome.jpg")}
-                      alt=""
-                    ></img>
-                  </div>
-                  <h6>Shantanu G</h6>
-                  <span>Premium Member</span>
-                </div>
-
-                <a href="#/" className="dropdown-item">
-                  <i className="typcn typcn-user-outline"></i> My Profile
-                </a>
-                <a href="#/" className="dropdown-item">
-                  <i className="typcn typcn-edit"></i> Edit Profile
-                </a>
-                <a href="#/" className="dropdown-item">
-                  <i className="typcn typcn-time"></i> Activity Logs
-                </a>
-                <a href="#/" className="dropdown-item">
-                  <i className="typcn typcn-cog-outline"></i> Account Settings
-                </a>
-                <a href="#/" onClick={handleSignOut} className="dropdown-item">
-                  <i className="typcn typcn-power-outline"></i> Sign Out
-                </a>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
-        </div>
+            </div>
+            <div className="dropdown-footer">
+              <a href="#/">View All Notifications</a>
+            </div>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Dropdown className="az-profile-menu">
+          <Dropdown.Toggle as={"a"} className="az-img-user">
+            <img src={require("../../assets/images/photome.jpg")} alt="" />
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <div className="az-dropdown-header d-sm-none">
+              <a href="#/" onClick={closeMenu} className="az-header-arrow">
+                <i className="icon ion-md-arrow-back"></i>
+              </a>
+            </div>
+            <div className="az-header-profile">
+              <div className="az-img-user">
+                <img src={require("../../assets/images/photome.jpg")} alt="" />
+              </div>
+              <h6>Shantanu G</h6>
+              <span>Premium Member</span>
+            </div>
+            <a href="#/" className="dropdown-item">
+              <i className="typcn typcn-user-outline"></i> My Profile
+            </a>
+            <a href="#/" className="dropdown-item">
+              <i className="typcn typcn-edit"></i> Edit Profile
+            </a>
+            <a href="#/" className="dropdown-item">
+              <i className="typcn typcn-time"></i> Activity Logs
+            </a>
+            <a href="#/" className="dropdown-item">
+              <i className="typcn typcn-cog-outline"></i> Account Settings
+            </a>
+            <a href="#/" onClick={handleSignOut} className="dropdown-item">
+              <i className="typcn typcn-power-outline"></i> Sign Out
+            </a>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
+
     </div>
+  </div>
+</div>
+
   );
 };
 

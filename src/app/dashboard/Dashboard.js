@@ -581,7 +581,7 @@ areaChartOptions = {
   render() {
     return (
       <div>
-        <div className="container p-md-0 mg-t-70">
+        <div className="container-fluid d-flex flex-column min-vh-100 p-md-10 mg-t-0">
           <div className="az-content-body">
             <div>
               <h2 className="az-dashboard-title">Hi, welcome back!</h2>
@@ -675,67 +675,61 @@ areaChartOptions = {
             </div>
 {/* Hidden div with historical data */}
             {this.state.selectedPeriod && (
-            <div><h6>Historical Data for Last {this.state.selectedPeriod}</h6>
+            <div>
               <div className="az-dashboard-one-title d-flex justify-content-between align-items-center">
                 <div className="az-content-header-right d-flex">
                 <div className="media">
                   <div className="media-body">
-                    <label>Domains</label>
-                    <h4>29</h4>
+                    <h6>29</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Sub Domains</label>
-                    <h4>15</h4>
+                    <h6>15</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Active IP<small>s</small></label>
-                    <h4>16</h4>
+                    <h6>16</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Net Blocks</label>
-                    <h4>15</h4>
+                    <h6>15</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Open Ports</label>
-                    <h4>6</h4>
+                    <h6>6</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Applications</label>
-                    <h4>38</h4>
+
+                    <h6>38</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>DNS Records</label>
-                    <h4>25</h4>
+                    <h6>25</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Leaked Credentials</label>
-                    <h4>35</h4>
+
+                    <h6>35</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>API<small>s</small></label>
-                    <h4>15</h4>
+
+                    <h6>15</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
-                    <label>Active Vulnerbilities</label>
-                    <h4>105</h4>
+
+                    <h6>105</h6>
                   </div>{/* media-body */}
                 </div>{/* media */}
               </div>
@@ -755,7 +749,7 @@ areaChartOptions = {
                       </div>{/* card-header */}
                       <div className="card-body">
                         <div className="chart d-flex align-items-end">
-                          <Bar data={this.domainVulnerabilitiesData} options={this.allSessionsChartOptions} />
+                          <Bar data={this.allSessionsChartData} options={this.allSessionsChartOptions} />
                         </div>
                       </div>
                     </div>
