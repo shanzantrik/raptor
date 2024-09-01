@@ -33,6 +33,8 @@ export class Dashboard extends Component {
   state = {
     showHistoricalData: false,
     selectedPeriod: '',
+    historicalData: { domains: 30, subDomains: 15, activeIPs: 26, netBlocks: 10, openPorts: 3, apps: 38, dns: 25, leakedCreds: 10, apis: 17, vulnerabilities: 65
+  }
   };
 
 domainVulnerabilitiesData = {
@@ -569,15 +571,42 @@ areaChartOptions = {
 
   handleDropdownChange = (event) => {
     const selectedPeriod = event.target.value;
+  const historicalDataChanges = { // Example changes, this should come from actual data
+    domains: 35,
+    subDomains: -13,
+    activeIPs: -24,
+    netBlocks: 15,
+    openPorts: 5,
+    apps: -35,
+    dns: 27,
+    leakedCreds: 10,
+    apis: -19,
+    vulnerabilities: 73,
+  };
     this.setState({
       selectedPeriod,
-      showHistoricalData: true, // Show the hidden div when a dropdown option is selected
+      // showHistoricalData: true, // Show the hidden div when a dropdown option is selected
+      historicalData: historicalDataChanges,
     });
   };
 
-  handleReset = () => {
-    this.setState({ selectedPeriod: '' });
-  };
+ handleReset = () => {
+  this.setState({
+    selectedPeriod: '',
+    historicalData: { // Reset historical data to zero or empty values
+    domains: 0,
+    subDomains: 0,
+    activeIPs: 0,
+    netBlocks: 0,
+    openPorts: 0,
+    apps: 0,
+    dns: 0,
+    leakedCreds: 0,
+    apis: 0,
+    vulnerabilities: 0,
+    }
+  });
+};
   render() {
     return (
       <div>
@@ -592,61 +621,121 @@ areaChartOptions = {
                 <div className="media">
                   <div className="media-body">
                     <label>Domains</label>
-                    <h4>30</h4>
+                    <h4>30
+                    {this.state.historicalData.domains !== 0 &&
+                          <span className={`small ${this.state.historicalData.domains > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.domains > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.domains)}
+                          </span>
+                    }
+                  </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>Sub Domains</label>
-                    <h4>15</h4>
+                    <h4>15
+                    {this.state.historicalData.subDomains !== 0 &&
+                          <span className={`small ${this.state.historicalData.subDomains > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.subDomains > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.subDomains)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>Active IP<small>s</small></label>
-                    <h4>26</h4>
+                    <h4>26
+                     {this.state.historicalData.activeIPs !== 0 &&
+                          <span className={`small ${this.state.historicalData.activeIPs > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.activeIPs > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.activeIPs)}
+                          </span>
+                     }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>Net Blocks</label>
-                    <h4>10</h4>
+                    <h4>10
+                    {this.state.historicalData.netBlocks !== 0 &&
+                          <span className={`small ${this.state.historicalData.netBlocks > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.netBlocks > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.netBlocks)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>Open Ports</label>
-                    <h4>3</h4>
+                    <h4>3
+                    {this.state.historicalData.openPorts !== 0 &&
+                          <span className={`small ${this.state.historicalData.openPorts > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.openPorts > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.openPorts)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>Applications</label>
-                    <h4>38</h4>
+                    <h4>38
+                    {this.state.historicalData.apps !== 0 &&
+                          <span className={`small ${this.state.historicalData.apps > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.apps > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.apps)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>DNS Records</label>
-                    <h4>25</h4>
+                    <h4>25
+                    {this.state.historicalData.dns !== 0 &&
+                          <span className={`small ${this.state.historicalData.dns > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.dns > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.dns)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>Leaked Credentials</label>
-                    <h4>10</h4>
+                    <h4>10
+                    {this.state.historicalData.leakedCreds !== 0 &&
+                          <span className={`small ${this.state.historicalData.leakedCreds > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.leakedCreds > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.leakedCreds)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>API<small>s</small></label>
-                    <h4>17</h4>
+                    <h4>17
+                    {this.state.historicalData.apis !== 0 &&
+                          <span className={`small ${this.state.historicalData.apis > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.apis > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.apis)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
                 <div className="media">
                   <div className="media-body">
                     <label>Active Vulnerbilities</label>
-                    <h4>65</h4>
+                    <h4>65
+                    {this.state.historicalData.vulnerabilities !== 0 &&
+                          <span className={`small ${this.state.historicalData.vulnerabilities > 0 ? 'text-success' : 'text-danger'}`}>
+                            {this.state.historicalData.vulnerabilities > 0 ? '↑' : '↓'} {Math.abs(this.state.historicalData.vulnerabilities)}
+                          </span>
+                    }
+                    </h4>
                   </div>{/* media-body */}
                 </div>{/* media */}
               </div>
@@ -673,69 +762,6 @@ areaChartOptions = {
 
         </div>
             </div>
-{/* Hidden div with historical data */}
-            {this.state.selectedPeriod && (
-            <div>
-              <div className="az-dashboard-one-title d-flex justify-content-between align-items-center">
-                <div className="az-content-header-right d-flex">
-                <div className="media">
-                  <div className="media-body">
-                    <h6>29</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-                    <h6>15</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-                    <h6>16</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-                    <h6>15</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-                    <h6>6</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-
-                    <h6>38</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-                    <h6>25</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-
-                    <h6>35</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-
-                    <h6>15</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-                <div className="media">
-                  <div className="media-body">
-
-                    <h6>105</h6>
-                  </div>{/* media-body */}
-                </div>{/* media */}
-              </div>
-              </div>
-            </div>
-            )}
             <div className="az-dashboard-nav">
               <DashboardTabs />
             </div>
