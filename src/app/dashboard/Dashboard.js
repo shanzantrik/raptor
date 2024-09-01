@@ -33,7 +33,7 @@ export class Dashboard extends Component {
   state = {
     showHistoricalData: false,
     selectedPeriod: '',
-    historicalData: { domains: 30, subDomains: 15, activeIPs: 26, netBlocks: 10, openPorts: 3, apps: 38, dns: 25, leakedCreds: 10, apis: 17, vulnerabilities: 65
+    historicalData: { domains: 0, subDomains: 0, activeIPs: 0, netBlocks: 0, openPorts: 0, apps: 0, dns: 0, leakedCreds: 0, apis: 0, vulnerabilities: 0
   }
   };
 
