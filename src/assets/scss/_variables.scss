@@ -1,0 +1,30 @@
+// Import Bootstrap first
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+// Font families
+$font-family-roboto: 'Roboto', sans-serif;
+$font-family-montserrat: 'Montserrat', sans-serif;
+$font-family-raleway: 'Raleway', sans-serif;
+
+// Base colors
+$white: #fff;
+$black: #000;
+$gray-lightest: #f8f9fa;
+$border-color: #dee2e6;
+$font-weight-bold: 700;
+
+// Theme colors (using Bootstrap's variables)
+$theme-colors: (
+  "primary": $primary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// Add any other variables your theme needs
+$indigo: #6610f2;  // If not already defined by Bootstrap
+$blue: #007bff;    // If not already defined by Bootstrap

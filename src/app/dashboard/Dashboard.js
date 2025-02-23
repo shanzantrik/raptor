@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Pie, Bar, Line } from 'react-chartjs-2';
-import DashboardTabs from './DashboardTabs';
+import DashboardTabs from '../dashboard/DashboardTabs';
 import { Dropdown } from 'react-bootstrap';
 import { ThreeDotsVertical } from 'react-bootstrap-icons';
 import {
@@ -15,6 +15,7 @@ import {
   Legend,
   ArcElement,
 } from 'chart.js';
+import AssetCards from './AssetCards';
 
 // Register necessary components with Chart.js
 ChartJS.register(
@@ -762,6 +763,11 @@ areaChartOptions = {
 
         </div>
             </div>
+          <div className="row mt-4">
+            <AssetCards />
+          </div>
+<div> &nbsp;</div>
+            <div className="az-content-label mg-b-5">Vulnerability Overview</div>
             <div className="az-dashboard-nav">
               <DashboardTabs />
             </div>

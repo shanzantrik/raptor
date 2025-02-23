@@ -14,37 +14,18 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 // @import "~flag-icon-css/css/flag-icon.min.css";
 
-// Bootstrap variable overrides
-@import "../assets/scss/bootstrap/variables";
-@import "../assets/scss/bootstrap/mixins";
-
 /* ############### BOOTSTRAP FRAMEWORK ############### */
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
 
-/* ########## CUSTOM MIXINS ########## */
+/* ########## CUSTOM VARIABLES & MIXINS ########## */
+@import "../assets/scss/_variables";
 @import "../assets/scss/custom/variables";
-@import "../assets/scss/custom/mixins"; // Import custom mixins here
+@import "../assets/scss/custom/mixins";
 
-/* ########## BOOTSTRAP OVERRIDES ########## */
-@import "../assets/scss/bootstrap/accordion";
-@import "../assets/scss/bootstrap/alerts";
-@import "../assets/scss/bootstrap/badge";
-@import "../assets/scss/bootstrap/breadcrumb";
-@import "../assets/scss/bootstrap/buttons";
-@import "../assets/scss/bootstrap/cards";
-@import "../assets/scss/bootstrap/carousel";
-@import "../assets/scss/bootstrap/dropdown";
-@import "../assets/scss/bootstrap/forms";
-@import "../assets/scss/bootstrap/grid";
-@import "../assets/scss/bootstrap/input-group";
-@import "../assets/scss/bootstrap/modal";
-@import "../assets/scss/bootstrap/nav";  /* Ensure this file has the necessary mixin */
-@import "../assets/scss/bootstrap/pagination";
-@import "../assets/scss/bootstrap/popover";
-@import "../assets/scss/bootstrap/progress";
-@import "../assets/scss/bootstrap/table";
-@import "../assets/scss/bootstrap/toast";
-@import "../assets/scss/bootstrap/tooltip";
+/* ############### BOOTSTRAP MAIN ############### */
+@import "~bootstrap/scss/bootstrap";
 
 /* ############### CUSTOM ELEMENT STYLES ############### */
 @import "../assets/scss/custom/accordion";
@@ -70,7 +51,7 @@
 @import "../assets/scss/lib/select2";
 @import "../assets/scss/lib/spectrum";
 @import "../assets/scss/lib/react-datepicker";
-@import "../assets/scss/lib/nouislider";
+@import "../assets/scss/lib/_nouislider.scss";
 @import "../assets/scss/lib/multistep";
 
 /* ############### PAGE LAYOUT STYLES ############### */

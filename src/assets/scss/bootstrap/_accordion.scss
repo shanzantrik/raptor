@@ -48,7 +48,7 @@
   }
 }
 
-// Accordion Color Variant
+// Accordion Color Variants
 .accordion-indigo { @include accordion-variant($indigo); }
 .accordion-blue { @include accordion-variant($blue); }
 .accordion-dark { @include accordion-variant($gray-900); }
